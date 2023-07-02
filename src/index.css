@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  background: #012c3b;
+  color: #ffffff;
+
+}
+
+@layer base {
+}
+
+@layer components {
+  .pMaxW {
+    @apply max-w-[1920px] mx-auto;
+  }
+  .maxW {
+    @apply max-w-7xl px-3 md:px-5 mx-auto;
+  }
+  #header .navbar div,
+  ul,
+  li,
+  a {
+    @apply bg-white;
+  }
+}
