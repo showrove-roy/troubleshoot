@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 export const Header = () => {
   return (
-    <header id="header" className="bg-white">
-      <nav className='navbar bg-white maxW'>
+    <header id='header' className='bg-white'>
+      <nav className='navbar bg-white maxW '>
         <div className='navbar-start '>
           <div className='dropdown'>
             <label tabIndex={0} className='btn btn-ghost lg:hidden'>
@@ -41,14 +43,17 @@ export const Header = () => {
               </li>
             </ul>
           </div>
-          <a className='btn btn-ghost normal-case text-xl'>daisyUI</a>
+          <Link to='/'>
+            {/* LOGO */}
+            <img className='h-12' src='/public/images/Logo.png' alt='' />
+          </Link>
         </div>
         <div className='navbar-center hidden lg:flex '>
           <ul className='menu menu-horizontal px-1 '>
             <li>
               <a>Item 1</a>
             </li>
-            
+
             <li>
               <a>Item 3</a>
             </li>
