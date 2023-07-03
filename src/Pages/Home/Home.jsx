@@ -1,10 +1,12 @@
+import Banner from "./Banner"
+import './home.css'
 
 
 export const Home = () => {
 
   return (
     <div className="maxW">
-      <h1 className="text-3xl">Hello World</h1>
+      <Banner />
     </div>
   )
 }

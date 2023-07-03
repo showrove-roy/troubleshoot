@@ -1,0 +1,23 @@
+/* Banner */
+.locationBtn{
+    padding: 10px 20px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #18C15C;
+}
+.searchBar{
+    width: 512px;
+    height: 50px;
+    border-radius: 30px;
+    padding: 20px;
+}
+.searchBtn{
+    height: 46px;
+    background-color: #18C15C;
+    padding: 0px 30px;
+    border-radius: 30px;
+    margin-right: 3px;
+}
+.searchSection{
+    margin-left: 60px;
+}
