@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Rubik:wght@400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,10 +12,22 @@
 
 html {
   background: #012c3b;
-  
 }
 
 @layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Montserrat", sans-serif;
+  }
+  p,
+  span,
+  a {
+    font-family: "Rubik", sans-serif;
+  }
 }
 
 @layer components {
@@ -21,7 +35,7 @@ html {
     @apply max-w-[1920px] mx-auto;
   }
   .maxW {
-    @apply max-w-7xl px-3 md:px-5 mx-auto;
+    @apply max-w-7xl px-2 md:px-5 mx-auto;
   }
   #header .navbar div,
   ul,
@@ -30,3 +44,5 @@ html {
     @apply bg-white;
   }
 }
+
+
