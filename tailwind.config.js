@@ -2,7 +2,19 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        "primary": "#18C15C",
+        "secondary": "#3A6D81",
+        "accent": "#1FB2A6",
+        "neutral": "#011736",
+        "gray1": "#FFFFFFA6",
+        "gray2": "#FFFFFFB2",
+        "gray3": "#FFFFFFE5",
+        "gray4": "#828282",
+        "gray5": "#1B1B1C",
+      }
+    },
   },
   daisyui: {
     themes: [

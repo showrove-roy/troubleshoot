@@ -7,11 +7,11 @@
 * {
   margin: 0;
   padding: 0;
-  color: #ffffff;
 }
 
 html {
   background: #012c3b;
+  color: #ffffff;
 }
 
 @layer base {
@@ -21,12 +21,14 @@ html {
   h4,
   h5,
   h6 {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif !important;
+    color: #ffffff;
   }
   p,
   span,
   a {
     font-family: "Rubik", sans-serif;
+    color: #ffffff;
   }
 }
 
@@ -37,12 +39,11 @@ html {
   .maxW {
     @apply max-w-7xl px-2 md:px-5 mx-auto;
   }
-  #header .navbar div,
-  ul,
-  li,
-  a {
-    @apply bg-white;
+
+  .fontMont {
+    font-family: "Montserrat", sans-serif !important;
+  }
+  .menulist li a{
+    @apply text-black fontMont text-base font-semibold hover:text-white hover:bg-primary px-3 py-2 rounded duration-200;
   }
 }
-
-

@@ -1,68 +1,96 @@
 import { Link } from "react-router-dom";
+import { HiMenu } from "react-icons/hi";
+import { HiX } from "react-icons/hi";
+import { useEffect, useState } from "react";
 
 export const Header = () => {
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    window.addEventListener(
+      "resize",
+      () => window.innerWidth >= 768 && setOpen(false)
+    );
+  }, []);
+
+  // body screen scroll disabled
+  useEffect(() => {
+    if (open === false) {
+      document.body.style.overflow = "unset";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
+  }, [open]);
+  const menulist = (
+    <>
+      <li>
+        <Link to='/'>Home</Link>
+      </li>
+      <li>
+        <Link to='/'>Services</Link>
+      </li>
+      <li>
+        <Link to='/'>Testimonials</Link>
+      </li>
+      <li>
+        <Link to='/'>Get App</Link>
+      </li>
+    </>
+  );
   return (
-    <header id='header' className='bg-white'>
-      <nav className='navbar bg-white maxW '>
-        <div className='navbar-start '>
-          <div className='dropdown'>
-            <label tabIndex={0} className='btn btn-ghost lg:hidden'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-5 w-5'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'>
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth='2'
-                  d='M4 6h16M4 12h8m-8 6h16'
+    <nav className='bg-white text-black fontMont relative'>
+      <div className='maxW py-1'>
+        <div className='flex justify-between items-center'>
+          {/* start section */}
+          <div className=''>
+            <div className='md:h-14 h-10'>
+              {/* logo */}
+              <Link to='/'>
+                <img
+                  className='h-full w-full'
+                  src='/public/images/Logo.png'
+                  alt=''
                 />
-              </svg>
-            </label>
-            <ul
-              tabIndex={0}
-              className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52'>
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Parent</a>
-                <ul className='p-2'>
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
+              </Link>
+            </div>
+          </div>
+
+          {/* Center section  */}
+          <div className='hidden md:block'>
+            <ul className='menulist flex gap-3'>{menulist}</ul>
+          </div>
+
+          {/* End section  */}
+          <div className='flex justify-center items-center gap-3'>
+            <button className='rounded-full md:px-10 px-6 md:py-[10px] py-[6px] md:text-base text-sm border border-black font-semibold hover:text-white hover:border-primary duration-300 hover:scale-95 hover:bg-primary'>
+              Log In
+            </button>
+
+            {/* responsive menu icon toggle */}
+            <div className='md:hidden block'>
+              {open ? (
+                <HiX
+                  className='text-2xl text-black'
+                  onClick={() => setOpen(!open)}
+                />
+              ) : (
+                <HiMenu
+                  className='text-2xl text-black'
+                  onClick={() => setOpen(!open)}
+                />
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+      {open && (
+        <div className='max-h-screen bg-white border-t-2 border-primary w-full absolute left-0 bottom-0-0 overflow-y-auto'>
+          <div className=''>
+            <ul className='menulist flex flex-col justify-center items-center gap-4 h-screen py-28'>
+              {menulist}
             </ul>
           </div>
-          <Link to='/'>
-            {/* LOGO */}
-            <img className='h-12' src='/public/images/Logo.png' alt='' />
-          </Link>
         </div>
-        <div className='navbar-center hidden lg:flex '>
-          <ul className='menu menu-horizontal px-1 '>
-            <li>
-              <a>Item 1</a>
-            </li>
-
-            <li>
-              <a>Item 3</a>
-            </li>
-          </ul>
-        </div>
-        <div className='navbar-end '>
-          <a className='btn'>Button</a>
-        </div>
-      </nav>
-    </header>
+      )}
+    </nav>
   );
 };
