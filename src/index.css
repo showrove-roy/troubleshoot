@@ -20,14 +20,11 @@ html {
   h3,
   h4,
   h5,
-  h6 {
-    font-family: "Montserrat", sans-serif !important;
-    color: #ffffff;
-  }
+  h6,
   p,
   span,
   a {
-    font-family: "Rubik", sans-serif;
+    font-family: "Montserrat", sans-serif !important;
     color: #ffffff;
   }
 }
@@ -39,11 +36,10 @@ html {
   .maxW {
     @apply max-w-7xl px-2 md:px-5 mx-auto;
   }
-
-  .fontMont {
-    font-family: "Montserrat", sans-serif !important;
+  .fontRubik {
+    font-family: "Rubik", sans-serif;
   }
-  .menulist li a{
-    @apply text-black fontMont text-base font-semibold hover:text-white hover:bg-primary px-3 py-2 rounded duration-200;
+  .menulist li a {
+    @apply text-black text-base font-semibold hover:text-white hover:bg-primary px-3 py-2 rounded duration-200;
   }
 }
