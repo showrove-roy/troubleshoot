@@ -1,6 +1,7 @@
 import { FaFacebookF } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
+import { AiOutlineCopyrightCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
@@ -149,6 +150,9 @@ export const Footer = () => {
             </ul>
           </div>
         </div>
+
+        <div className="border md:my-10 my-5"></div>
+        <p className="text-sm flex items-center gap-1 justify-center cursor-pointer">Copyright <AiOutlineCopyrightCircle/> 2023 All right reserved</p>
       </div>
     </footer>
   );
